@@ -1,8 +1,0 @@
-pyTelegramBotAPI
-requests
-beautifulsoup4
-user_agent
-pyfiglet
-colorama
-getuseragent
-faker
