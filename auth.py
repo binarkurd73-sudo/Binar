@@ -16,7 +16,7 @@ CHARGED_FILE  = os.path.join(BASE_DIR, "charged.txt")
 NOPECHA_FILE  = os.path.join(BASE_DIR, "nopecha.json")   # {str(user_id): api_key}
 
 OWNER_ID          = 5794137971
-FREE_GROUP_ID     = -1002908004486
+FREE_GROUP_ID     = -1004441107512
 
 # ── CC limits per role ────────────────────────────────────────────────────────
 CC_LIMITS = {
