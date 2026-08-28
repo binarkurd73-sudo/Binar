@@ -147,8 +147,14 @@ def remove_admin(user_id: int) -> bool:
         return True
     return False
 
+ANONYMOUS_BOT_ID = 1087968824
+
 def is_admin(user_id: int) -> bool:
-    return user_id in load_admins() or is_owner(user_id)
+    return (
+        user_id in load_admins()
+        or is_owner(user_id)
+        or user_id == ANONYMOUS_BOT_ID
+    )
 
 
 # ══════════════════════════════════════════════════════════════════════════════
