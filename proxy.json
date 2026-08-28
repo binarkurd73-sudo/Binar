@@ -1,0 +1,530 @@
+{
+  "5794137971": [
+    {
+      "ip": "159.65.230.46",
+      "port": "8888",
+      "username": null,
+      "password": null,
+      "proxy_url": "http://159.65.230.46:8888",
+      "type": "http"
+    },
+    {
+      "ip": "67.203.23.88",
+      "port": "8081",
+      "username": null,
+      "password": null,
+      "proxy_url": "http://67.203.23.88:8081",
+      "type": "http"
+    },
+    {
+      "ip": "178.212.144.7",
+      "port": "80",
+      "username": null,
+      "password": null,
+      "proxy_url": "http://178.212.144.7:80",
+      "type": "http"
+    },
+    {
+      "ip": "153.72.68.0",
+      "port": "8080",
+      "username": null,
+      "password": null,
+      "proxy_url": "http://153.72.68.0:8080",
+      "type": "http"
+    },
+    {
+      "ip": "219.65.73.80",
+      "port": "80",
+      "username": null,
+      "password": null,
+      "proxy_url": "http://219.65.73.80:80",
+      "type": "http"
+    },
+    {
+      "ip": "43.133.175.183",
+      "port": "7890",
+      "username": null,
+      "password": null,
+      "proxy_url": "http://43.133.175.183:7890",
+      "type": "http"
+    },
+    {
+      "ip": "181.78.74.253",
+      "port": "999",
+      "username": null,
+      "password": null,
+      "proxy_url": "http://181.78.74.253:999",
+      "type": "http"
+    },
+    {
+      "ip": "37.59.125.131",
+      "port": "8888",
+      "username": null,
+      "password": null,
+      "proxy_url": "http://37.59.125.131:8888",
+      "type": "http"
+    },
+    {
+      "ip": "153.72.68.0",
+      "port": "8081",
+      "username": null,
+      "password": null,
+      "proxy_url": "http://153.72.68.0:8081",
+      "type": "http"
+    },
+    {
+      "ip": "176.111.37.5",
+      "port": "39811",
+      "username": null,
+      "password": null,
+      "proxy_url": "http://176.111.37.5:39811",
+      "type": "http"
+    },
+    {
+      "ip": "103.237.102.191",
+      "port": "11111",
+      "username": null,
+      "password": null,
+      "proxy_url": "http://103.237.102.191:11111",
+      "type": "http"
+    },
+    {
+      "ip": "200.59.191.27",
+      "port": "999",
+      "username": null,
+      "password": null,
+      "proxy_url": "http://200.59.191.27:999",
+      "type": "http"
+    },
+    {
+      "ip": "91.231.186.236",
+      "port": "8181",
+      "username": null,
+      "password": null,
+      "proxy_url": "http://91.231.186.236:8181",
+      "type": "http"
+    },
+    {
+      "ip": "195.26.230.202",
+      "port": "8080",
+      "username": null,
+      "password": null,
+      "proxy_url": "http://195.26.230.202:8080",
+      "type": "http"
+    },
+    {
+      "ip": "107.150.71.30",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@107.150.71.30:12345",
+      "type": "http"
+    },
+    {
+      "ip": "107.150.71.197",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@107.150.71.197:12345",
+      "type": "http"
+    },
+    {
+      "ip": "103.204.109.189",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@103.204.109.189:12345",
+      "type": "http"
+    },
+    {
+      "ip": "181.177.102.240",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@181.177.102.240:12345",
+      "type": "http"
+    },
+    {
+      "ip": "104.160.17.116",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@104.160.17.116:12345",
+      "type": "http"
+    },
+    {
+      "ip": "50.3.137.165",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@50.3.137.165:12345",
+      "type": "http"
+    },
+    {
+      "ip": "162.212.170.77",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@162.212.170.77:12345",
+      "type": "http"
+    },
+    {
+      "ip": "162.212.170.252",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@162.212.170.252:12345",
+      "type": "http"
+    },
+    {
+      "ip": "23.104.162.39",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@23.104.162.39:12345",
+      "type": "http"
+    },
+    {
+      "ip": "5.157.5.154",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@5.157.5.154:12345",
+      "type": "http"
+    },
+    {
+      "ip": "107.173.112.194",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@107.173.112.194:12345",
+      "type": "http"
+    },
+    {
+      "ip": "190.123.219.12",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@190.123.219.12:12345",
+      "type": "http"
+    },
+    {
+      "ip": "196.247.205.48",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@196.247.205.48:12345",
+      "type": "http"
+    },
+    {
+      "ip": "181.215.16.247",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@181.215.16.247:12345",
+      "type": "http"
+    }
+  ],
+  "1060638372": [
+    {
+      "ip": "107.150.71.30",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@107.150.71.30:12345",
+      "type": "http"
+    },
+    {
+      "ip": "107.150.71.197",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@107.150.71.197:12345",
+      "type": "http"
+    },
+    {
+      "ip": "103.204.109.189",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@103.204.109.189:12345",
+      "type": "http"
+    },
+    {
+      "ip": "181.177.102.240",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@181.177.102.240:12345",
+      "type": "http"
+    },
+    {
+      "ip": "104.160.17.116",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@104.160.17.116:12345",
+      "type": "http"
+    },
+    {
+      "ip": "50.3.137.165",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@50.3.137.165:12345",
+      "type": "http"
+    },
+    {
+      "ip": "162.212.170.77",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@162.212.170.77:12345",
+      "type": "http"
+    },
+    {
+      "ip": "162.212.170.252",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@162.212.170.252:12345",
+      "type": "http"
+    },
+    {
+      "ip": "23.104.162.39",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@23.104.162.39:12345",
+      "type": "http"
+    },
+    {
+      "ip": "5.157.5.154",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@5.157.5.154:12345",
+      "type": "http"
+    },
+    {
+      "ip": "107.173.112.194",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@107.173.112.194:12345",
+      "type": "http"
+    },
+    {
+      "ip": "190.123.219.12",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@190.123.219.12:12345",
+      "type": "http"
+    },
+    {
+      "ip": "196.247.205.48",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@196.247.205.48:12345",
+      "type": "http"
+    },
+    {
+      "ip": "181.215.16.247",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@181.215.16.247:12345",
+      "type": "http"
+    },
+    {
+      "ip": "107.175.34.7",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@107.175.34.7:12345",
+      "type": "http"
+    },
+    {
+      "ip": "185.122.170.73",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@185.122.170.73:12345",
+      "type": "http"
+    },
+    {
+      "ip": "107.172.241.122",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@107.172.241.122:12345",
+      "type": "http"
+    },
+    {
+      "ip": "173.234.153.90",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@173.234.153.90:12345",
+      "type": "http"
+    },
+    {
+      "ip": "190.123.219.34",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@190.123.219.34:12345",
+      "type": "http"
+    },
+    {
+      "ip": "138.94.218.193",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@138.94.218.193:12345",
+      "type": "http"
+    },
+    {
+      "ip": "196.247.205.88",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@196.247.205.88:12345",
+      "type": "http"
+    },
+    {
+      "ip": "196.247.205.228",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@196.247.205.228:12345",
+      "type": "http"
+    },
+    {
+      "ip": "50.3.137.177",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@50.3.137.177:12345",
+      "type": "http"
+    },
+    {
+      "ip": "107.172.170.102",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@107.172.170.102:12345",
+      "type": "http"
+    },
+    {
+      "ip": "107.158.118.94",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@107.158.118.94:12345",
+      "type": "http"
+    },
+    {
+      "ip": "192.227.238.145",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@192.227.238.145:12345",
+      "type": "http"
+    },
+    {
+      "ip": "196.196.23.136",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@196.196.23.136:12345",
+      "type": "http"
+    },
+    {
+      "ip": "161.0.1.13",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@161.0.1.13:12345",
+      "type": "http"
+    },
+    {
+      "ip": "107.173.112.211",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@107.173.112.211:12345",
+      "type": "http"
+    },
+    {
+      "ip": "107.175.37.77",
+      "port": "12345",
+      "username": "tickets",
+      "password": "proxyon145",
+      "proxy_url": "http://tickets:proxyon145@107.175.37.77:12345",
+      "type": "http"
+    }
+  ],
+  "1131209914": [
+    {
+      "ip": "px1260303.pointtoserver.com",
+      "port": "10780",
+      "username": "purevpn0s11340994",
+      "password": "ak3t35fp",
+      "proxy_url": "http://purevpn0s11340994:ak3t35fp@px1260303.pointtoserver.com:10780",
+      "type": "http"
+    },
+    {
+      "ip": "px1260303.pointtoserver.com",
+      "port": "10780",
+      "username": "purevpn0s2232045",
+      "password": "hww8fqbr72j0",
+      "proxy_url": "http://purevpn0s2232045:hww8fqbr72j0@px1260303.pointtoserver.com:10780",
+      "type": "http"
+    },
+    {
+      "ip": "px1260303.pointtoserver.com",
+      "port": "10780",
+      "username": "purevpn0s8732217",
+      "password": "i67s60ep",
+      "proxy_url": "http://purevpn0s8732217:i67s60ep@px1260303.pointtoserver.com:10780",
+      "type": "http"
+    },
+    {
+      "ip": "px1260303.pointtoserver.com",
+      "port": "10780",
+      "username": "purevpn0s11383538",
+      "password": "43z2vhwa",
+      "proxy_url": "http://purevpn0s11383538:43z2vhwa@px1260303.pointtoserver.com:10780",
+      "type": "http"
+    },
+    {
+      "ip": "px031901.pointtoserver.com",
+      "port": "10780",
+      "username": "purevpn0s11383538",
+      "password": "43z2vhwa",
+      "proxy_url": "http://purevpn0s11383538:43z2vhwa@px031901.pointtoserver.com:10780",
+      "type": "http"
+    },
+    {
+      "ip": "px1260303.pointtoserver.com",
+      "port": "10780",
+      "username": "purevpn0s7397024",
+      "password": "6CU9ZvexLGTqpB",
+      "proxy_url": "http://purevpn0s7397024:6CU9ZvexLGTqpB@px1260303.pointtoserver.com:10780",
+      "type": "http"
+    }
+  ],
+  "8456043064": [
+    {
+      "ip": "p.webshare.io",
+      "port": "80",
+      "username": "vjppaorf-rotate",
+      "password": "xbp9vxtdq2cn",
+      "proxy_url": "http://vjppaorf-rotate:xbp9vxtdq2cn@p.webshare.io:80",
+      "type": "http"
+    }
+  ]
+}
