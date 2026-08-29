@@ -197,7 +197,7 @@ TOKEN = "8604794001:AAENyv_KH8O5Vk9zKe6To-qf9Zdez9FM5Ow"
 
 # ── Join requirements ─────────────────────────────────────────────────────────
 join_channel_id = -1004441107512       # Replace with your channel ID
-join_chat_id    = -1002908004486       # Replace with your group ID
+join_chat_id    = -1004441107512       # Replace with your group ID
 
 CHANNEL_LINK = "https://t.me/binar_card1"
 GROUP_LINK   = "https://t.me/binar_card"
