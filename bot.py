@@ -2050,79 +2050,62 @@ async def cmd_freeproxylist(message: types.Message):
     tmp = await message.reply(f"{pe(E['loading'])} {bold('Loading proxy list...')}")
     await safe_edit(tmp, "\n".join(lines), reply_markup=kb)
 
-# ── GitHub Raw Proxy File URL ───────────────────────────────────────────────
-GITHUB_PROXY_URL = "https://raw.githubusercontent.com/binarkurd73-sudo/Binar/refs/heads/main/proxy.txt"
+import json
+import os
+
+OWNER_ID = 5794137971
+
+def is_admin_or_owner(user_id: int) -> bool:
+    # 1. پشکنینا Owner
+    if user_id == OWNER_ID:
+        return True
+    
+    # 2. خوندنا فایلا admins.json
+    if os.path.exists("admins.json"):
+        try:
+            with open("admins.json", "r", encoding="utf-8") as f:
+                admins_data = json.load(f)
+                # ئەگەر فایلا JSON لیستەکا ID یان بیت [123, 456]
+                if isinstance(admins_data, list) and user_id in admins_data:
+                    return True
+                # ئەگەر فایلا JSON dictionary بیت و کلیلەکا admins هەبیت {"admins": [123, 456]}
+                elif isinstance(admins_data, dict) and user_id in admins_data.get("admins", []):
+                    return True
+        except Exception:
+            pass
+
+    return False
 
 
-# ── فەرمانا نوو تەنێ بۆ Owner و Admin (خواندنا فایلا 7000 پرۆکسی) ──────────
-@router.message(Command("loadproxy"))
-async def cmd_loadproxy_admin(message: types.Message):
-    uid = message.from_user.id
-
-    joined = await check_user_joined(uid)
-    if not joined:
-        await message.reply(JOIN_MSG, reply_markup=board())
+@app.on_message(filters.command("loadproxy"))
+async def load_proxy_handler(client, message):
+    user_id = message.from_user.id
+    
+    # ئینانا هەمی پروکسییان ژ GitHub
+    proxies_list = await fetch_proxies_from_github() 
+    
+    if not proxies_list:
+        await message.reply("❌ چ پروکسی نەهاتنە دیتن!")
         return
 
-    if auth.is_banned(uid):
-        await message.reply(f"{pe(E['cross'])} {bold('You are banned!')}")
-        return
+    total_fetched = len(proxies_list)
 
-    # 🛑 پشکنینا دەسەڵاتان: تەنێ بۆ Owner و Admin
-    if not (auth.is_owner(uid) or auth.is_admin(uid)):
-        await message.reply(
-            f"{pe(E['cross'])} {bold('Access Restricted!')}\n\n"
-            f"{pe(E['warn'])} {bold('ئەڤ فەرمانە تەنێ بۆ Owner و Admin هاتیە تەرخانکرن.')}"
-        )
-        return
+    # پشکنینا دەستپێشخەریێ بۆ Owner یان Admin یێن د admins.json دا
+    if is_admin_or_owner(user_id):
+        proxies_to_add = proxies_list        # هەمی پروکسی (7000+)
+    else:
+        proxies_to_add = proxies_list[:30]    # بتنێ 30 بۆ بەکارهێنەرێ ئاسایی
 
-    loading = await message.reply(
-        f"{pe(E['loading'])} {bold('Reading all proxies from GitHub file...')}"
+    # پاشکەوتکرن
+    save_user_proxies(user_id, proxies_to_add)
+
+    top_10 = "\n".join([f"{i+1}. {px}" for i, px in enumerate(proxies_to_add[:10])])
+    
+    await message.reply(
+        f"⚡ **Successfully loaded {total_fetched} proxies from GitHub!**\n\n"
+        f"⚡ **Preview (Top 10):**\n{top_10}\n\n"
+        f"⚡ **Total proxies in your account: {len(proxies_to_add)}**"
     )
-
-    try:
-        # 📥 خواندنا فایلا proxy.txt ژ لینکێ GitHub یێ تە ئینایی
-        async with aiohttp.ClientSession() as session:
-            async with session.get(GITHUB_PROXY_URL, timeout=15) as resp:
-                if resp.status != 200:
-                    await safe_edit(loading, f"{pe(E['cross'])} {bold('Failed to download proxy file from GitHub!')}")
-                    return
-                content = await resp.text()
-
-        raw_lines = [line.strip() for line in content.splitlines() if line.strip()]
-        
-        parsed_proxies = []
-        for line in raw_lines:
-            # فلته‌ركرنا دێرێن كۆمێنتێ (#)
-            if line.startswith("#"):
-                continue
-            if ":" in line:
-                parts = line.split(":")
-                parsed_proxies.append({"ip": parts[0], "port": parts[1]})
-
-        if not parsed_proxies:
-            await safe_edit(loading, f"{pe(E['cross'])} {bold('No proxies found in GitHub file!')}")
-            return
-
-        # 🛑 زێدەکرنا هەمی پرۆکسیان ڕاستەوخۆ ل سەر لیستا Admin/Owner بێ سنووردارکرن
-        add_user_proxies(uid, parsed_proxies)
-        
-        total_now = len(get_user_proxies(uid) or [])
-
-        preview_list = parsed_proxies[:10]
-        proxy_lines = [f"{i}. <code>{p['ip']}:{p['port']}</code>" for i, p in enumerate(preview_list, 1)]
-
-        res_text = (
-            f"{pe(E['check'])} {bold(f'Successfully loaded {len(parsed_proxies)} proxies from GitHub!')}\n\n"
-            f"{pe(E['sparkle'])} {bold('Preview (Top 10):')}\n"
-            + "\n".join(proxy_lines) + "\n\n"
-            + f"{pe(E['check'])} {bold(f'Total proxies in your account: {total_now}')}"
-        )
-
-        await safe_edit(loading, res_text)
-
-    except Exception as e:
-        await safe_edit(loading, f"{pe(E['cross'])} {bold('Error:')} <code>{_html.escape(str(e))}</code>")
 
 
 
