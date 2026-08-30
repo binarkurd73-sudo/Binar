@@ -1552,7 +1552,12 @@ async def cb_check_proxy(callback: types.CallbackQuery):
 
         async def _test_one(proxy_data):
             try:
-                success, _, _ = await test_proxy(proxy_data["proxy_url"])
+                # ئەگەر proxy_url تێدا نەبێت خۆ ب خۆ دروست دکەت
+                p_url = proxy_data.get("proxy_url")
+                if not p_url and "ip" in proxy_data:
+                    p_url = f"http://{proxy_data.get('user', '')}:{proxy_data.get('pass', '')}@{proxy_data['ip']}:{proxy_data['port']}"
+                
+                success, _, _ = await test_proxy(p_url)
                 return proxy_data if success else None
             except Exception:
                 return None
@@ -1582,6 +1587,9 @@ async def cb_check_proxy(callback: types.CallbackQuery):
     data[str(owner_id)] = working
     _save_proxies(data)
 
+    # Limit according to Admin/Owner or Regular status
+    max_limit = get_user_max_proxies(owner_id)
+
     # Build final result with proxy list
     if not working:
         try:
@@ -1601,7 +1609,7 @@ async def cb_check_proxy(callback: types.CallbackQuery):
     ]
     if dead > 0:
         lines.append(f"{pe(E['warn'])} {bold(str(dead))} {bold('dead proxies removed!')}")
-    lines.append(f"{pe(E['star'])} {bold('Total saved:')} {bold(str(len(working)))}/{bold(str(MAX_PROXIES_PER_USER))}")
+    lines.append(f"{pe(E['star'])} {bold('Total saved:')} {bold(str(len(working)))}/{bold(str(max_limit))}")
     lines.append("")
 
     for i, p in enumerate(working[:10], 1):
