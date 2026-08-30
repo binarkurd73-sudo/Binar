@@ -569,6 +569,29 @@ def _gate_msg_display(msg: str, limit: int = 120) -> str:
 #  PROXY STORAGE  (proxy.json)
 # ══════════════════════════════════════════════════════════════════════════════
 
+import json
+import os
+import random
+
+OWNER_ID = 5794137971
+
+def is_admin_or_owner(user_id: int) -> bool:
+    """Check if the user is the Owner or listed in admins.json."""
+    if user_id == OWNER_ID:
+        return True
+    
+    if os.path.exists("admins.json"):
+        try:
+            with open("admins.json", "r", encoding="utf-8") as f:
+                data = json.load(f)
+                admin_list = data.get("admins", [])
+                if user_id in admin_list:
+                    return True
+        except Exception as e:
+            print(f"Error reading admins.json: {e}")
+            
+    return False
+
 _proxy_cache: dict | None = None
 _proxy_cache_mtime: float = 0.0
 
@@ -598,7 +621,11 @@ def _save_proxies(data: dict):
     except OSError:
         _proxy_cache_mtime = 0.0
 
-MAX_PROXIES_PER_USER = 30
+def get_user_max_proxies(user_id: int) -> int:
+    """Return max proxy limit: 100 for Admins/Owner, 30 for Regular users."""
+    if is_admin_or_owner(user_id):
+        return 100
+    return 30
 
 def get_user_proxies(user_id: int) -> list:
     """Return the full proxy list for a user (from proxy.json)."""
@@ -624,19 +651,24 @@ def get_user_proxy(user_id: int) -> dict | None:
     return random.choice(proxies) if proxies else None
 
 def add_user_proxies(user_id: int, new_proxies: list[dict]):
-    """Append proxies to user's list. Cap at MAX_PROXIES_PER_USER."""
+    """Append proxies to user's list with dynamic cap (100 for Admins, 30 for Regular)."""
     data = _load_proxies()
     existing = data.get(str(user_id), [])
     if isinstance(existing, dict):
         existing = [existing] if existing else []
     existing.extend(new_proxies)
-    data[str(user_id)] = existing[:MAX_PROXIES_PER_USER]
+    
+    max_limit = get_user_max_proxies(user_id)
+    data[str(user_id)] = existing[:max_limit]
+    
     _save_proxies(data)
 
 def del_user_proxy(user_id: int):
+    """Remove user proxies."""
     data = _load_proxies()
     data.pop(str(user_id), None)
     _save_proxies(data)
+
 
 
 # ══════════════════════════════════════════════════════════════════════════════
