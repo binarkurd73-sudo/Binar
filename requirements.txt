@@ -5,3 +5,4 @@ aiogram
 python-telegram-bot
 curl_cffi
 requests
+app
