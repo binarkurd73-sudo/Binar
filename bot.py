@@ -1769,7 +1769,7 @@ async def check_proxy_live(session: aiohttp.ClientSession, proxy: str) -> str | 
     proxy_url = f"http://{proxy}"
     try:
         async with session.get(
-            "http://httpbin.org/ip", proxy=proxy_url, timeout=3.5
+            "http://httpbin.org/ip", proxy=proxy_url, timeout=15
         ) as resp:
             if resp.status == 200:
                 return proxy
@@ -1813,7 +1813,7 @@ async def cmd_freeproxy(message: types.Message):
 
     try:
         async with aiohttp.ClientSession() as session:
-            async with session.get(url, timeout=10) as resp:
+            async with session.get(url, timeout=20) as resp:
                 if resp.status != 200:
                     await safe_edit(loading, f"{pe(E['cross'])} {bold('Failed to fetch proxy list.')}")
                     return
