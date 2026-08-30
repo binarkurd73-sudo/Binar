@@ -2050,62 +2050,7 @@ async def cmd_freeproxylist(message: types.Message):
     tmp = await message.reply(f"{pe(E['loading'])} {bold('Loading proxy list...')}")
     await safe_edit(tmp, "\n".join(lines), reply_markup=kb)
 
-import json
-import os
 
-OWNER_ID = 5794137971
-
-def is_admin_or_owner(user_id: int) -> bool:
-    # 1. پشکنینا Owner
-    if user_id == OWNER_ID:
-        return True
-    
-    # 2. خوندنا فایلا admins.json
-    if os.path.exists("admins.json"):
-        try:
-            with open("admins.json", "r", encoding="utf-8") as f:
-                admins_data = json.load(f)
-                # ئەگەر فایلا JSON لیستەکا ID یان بیت [123, 456]
-                if isinstance(admins_data, list) and user_id in admins_data:
-                    return True
-                # ئەگەر فایلا JSON dictionary بیت و کلیلەکا admins هەبیت {"admins": [123, 456]}
-                elif isinstance(admins_data, dict) and user_id in admins_data.get("admins", []):
-                    return True
-        except Exception:
-            pass
-
-    return False
-
-
-@app.on_message(filters.command("loadproxy"))
-async def load_proxy_handler(client, message):
-    user_id = message.from_user.id
-    
-    # ئینانا هەمی پروکسییان ژ GitHub
-    proxies_list = await fetch_proxies_from_github() 
-    
-    if not proxies_list:
-        await message.reply("❌ چ پروکسی نەهاتنە دیتن!")
-        return
-
-    total_fetched = len(proxies_list)
-
-    # پشکنینا دەستپێشخەریێ بۆ Owner یان Admin یێن د admins.json دا
-    if is_admin_or_owner(user_id):
-        proxies_to_add = proxies_list        # هەمی پروکسی (7000+)
-    else:
-        proxies_to_add = proxies_list[:30]    # بتنێ 30 بۆ بەکارهێنەرێ ئاسایی
-
-    # پاشکەوتکرن
-    save_user_proxies(user_id, proxies_to_add)
-
-    top_10 = "\n".join([f"{i+1}. {px}" for i, px in enumerate(proxies_to_add[:10])])
-    
-    await message.reply(
-        f"⚡ **Successfully loaded {total_fetched} proxies from GitHub!**\n\n"
-        f"⚡ **Preview (Top 10):**\n{top_10}\n\n"
-        f"⚡ **Total proxies in your account: {len(proxies_to_add)}**"
-    )
 
 
 
